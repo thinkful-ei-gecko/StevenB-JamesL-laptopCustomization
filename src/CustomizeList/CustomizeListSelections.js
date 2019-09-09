@@ -17,8 +17,8 @@ export default function CustomizeListSelections(props) {
             onChange={e => props.changeSelected(feature, item)}
           />
           <label htmlFor={itemHash} className="feature__label">
-            {item.name} ({/* {USCurrencyFormat.format(item.cost)} */})
-          </label>
+            {item.name} {/* () */}
+          </label> 
         </div>
       );
     });

@@ -5,7 +5,7 @@ export default function CustomizeList(props) {
   return (
     <>
       <h2>Customize your Laptop</h2>
-      <CustomizeListSelections listOfFeatures={props.featureList} appStateList={props.stateList} changeSelected={props.changeState}/>
+      <CustomizeListSelections listOfFeatures={props.featureList} appStateList={props.stateList} changeSelected={ () => props.changeState() }/>
     </>
   )
 }

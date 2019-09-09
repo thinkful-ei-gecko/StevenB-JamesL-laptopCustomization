@@ -71,9 +71,9 @@ class App extends Component {
         <Header />
         <main>
           <form className="main__form">
-            <CustomizeList featureList={this.props.features} stateList={this.state} changeState={this.updateFeature}/>
-            {/* <h2>Customize your laptop</h2>
-            {features} */}
+            <CustomizeList featureList={this.props.features} 
+                           stateList={this.state} 
+                           changeState={this.updateFeature}/>
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>
