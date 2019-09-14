@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import CustomizeList from './CustomizeList/CustomizeList';
 import Header from './Header/Header';
+import CartMain from './Cart/CartMain'
 
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
 
 import './App.css';
-import UserCart from './Cart/UserCart';
-import CartTotal from './Cart/CartTotal'
 // This object will allow us to
 // easily convert numbers into US dollar values
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
@@ -51,24 +50,17 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <form className="main__form">
-            <CustomizeList 
-              featureList={this.props.features} 
-              stateList={this.state} 
-              changeState={this.updateFeature}
-              Currency={USCurrencyFormat}/>
-          </form>
-          <section className="main__summary">
-          <h2>Your cart</h2>
-            <UserCart 
-              CartState={this.state}
-              CurrencyFormat={USCurrencyFormat}
-            />
-          <CartTotal 
+          <CustomizeList 
+            featureList={this.props.features} 
+            stateList={this.state} 
+            changeState={this.updateFeature}
+            Currency={USCurrencyFormat}/>
+          <CartMain 
+            CartState={this.state}
+            CurrencyFormat={USCurrencyFormat}
             TotalState={this.state}
             TotalCurrency={USCurrencyFormat}
           />
-          </section>
         </main>
       </div>
     );
